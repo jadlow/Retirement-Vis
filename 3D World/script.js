@@ -12,7 +12,7 @@ var degPerSec = 6
 var angles = { x: -20, y: 40, z: 0}
 // colors
 var colorWater = '#fff'
-var colorLand = '#111'
+var colorLand = '#808080'
 var colorGraticule = '#ccc'
 var colorCountry = '#a00'
 
@@ -25,7 +25,7 @@ function enter(country) {
   var country = countryList.find(function(c) {
     return parseInt(c.id, 10) === parseInt(country.id, 10)
   })
-  current.text(country && country.name || '')
+  current.text(country && country.name + " " + country.QOL|| '')
 }
 
 function leave(country) {
@@ -53,6 +53,9 @@ var land, countries
 var countryList
 var autorotate, now, diff, roation
 var currentCountry
+var color
+var maxQOL
+var minQOL
 
 //
 // Functions
@@ -107,15 +110,22 @@ function render() {
   context.clearRect(0, 0, width, height)
   fill(water, colorWater)
   stroke(graticule, colorGraticule)
-  var color = getColor()
-  fill(land, colorLand)
+    for (var i = 0; i < countries.features.length; i++) {
+        if (countries.features[i] != null && countries.features[i].properties.QOL > 0){
+            color = getColor(countries.features[i].properties.QOL)
+        }else{
+            color = colorLand
+        }
+        fill(countries.features[i], color)
+    }
   if (currentCountry) {
     fill(currentCountry, colorCountry)
   }
 }
 
 function getColor(val) {
-    return "rgb(0,0, " + Math.round(val) + ")";
+    normVal = (val - minQOL) / (maxQOL - minQOL)
+    return "rgb(40," +  Math.round(normVal*255 + 80) +",40)";
 }
 
 function fill(obj, color) {
@@ -145,12 +155,27 @@ function rotate(elapsed) {
 }
 
 function loadData(cb) {
-  d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function(error, world) {
+  d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function(error, json) {
     if (error) throw error
-    d3.tsv('./QoL.tsv', function(error, countries) {
+    d3.tsv('./QoLv2.tsv', function(error, data) {
       if (error) throw error
-      cb(world, countries)
-        console.log(world.objects.countries.geometries)
+      console.log(data)
+      console.log(data[0])
+        maxQOL = d3.max(data, function(d) { return parseInt(d.QOL); }) + 1
+        minQOL = d3.min(data, function(d) { return parseInt(d.QOL); }) + 1
+        for (var i = 0; i < data.length; i++) {
+            var dataNum = data[i].id;
+            var dataName = data[i].name;
+            var dataQOL = data[i].QOL;
+            for (var j = 0; j < json.objects.countries.geometries.length; j++) {
+                var jsonCountryNum = json.objects.countries.geometries[j].id;
+                if (parseInt(jsonCountryNum) == parseInt(dataNum)) {
+                    json.objects.countries.geometries[j].properties = {'name': dataName, 'QOL': dataQOL};
+                    break;
+                }
+            }
+        }
+      cb(json, data)
     })
   })
 }
@@ -219,6 +244,11 @@ loadData(function(world, cList) {
   land = topojson.feature(world, world.objects.land)
   countries = topojson.feature(world, world.objects.countries)
   countryList = cList
+    console.log(land)
+    console.log(countries)
+    // for (var i = 0; i < countries.features.length; i++){
+    //   console.log(countries.features[i])
+    // }
   
   window.addEventListener('resize', scale)
   scale()

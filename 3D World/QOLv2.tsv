@@ -1,0 +1,253 @@
+id	name	QOL
+-1	Northern Cyprus	no data
+-2	Kosovo	no data
+-3	Somaliland	no data
+4	Afghanistan	no data
+8	Albania	no data
+10	Antarctica	no data
+12	Algeria	no data
+16	American Samoa	no data
+20	Andorra	no data
+24	Angola	no data
+28	Antigua and Barbuda	no data
+31	Azerbaijan	104.1
+32	Argentina	105.42
+36	Australia	183.81
+40	Austria	179.16
+44	Bahamas	no data
+48	Bahrain	no data
+50	Bangladesh	67.59
+51	Armenia	no data
+52	Barbados	no data
+56	Belgium	151.86
+60	Bermuda	no data
+64	Bhutan	no data
+68	Bolivia, Plurinational State of	no data
+70	Bosnia and Herzegovina	127.07
+72	Botswana	no data
+74	Bouvet Island	no data
+76	Brazil	107.04
+84	Belize	no data
+86	British Indian Ocean Territory	no data
+90	Solomon Islands	no data
+92	Virgin Islands, British	no data
+96	Brunei Darussalam	no data
+100	Bulgaria	130.09
+104	Myanmar	no data
+108	Burundi	no data
+112	Belarus	108.48
+116	Cambodia	no data
+120	Cameroon	no data
+124	Canada	160.38
+132	Cape Verde	no data
+136	Cayman Islands	no data
+140	Central African Republic	no data
+144	Sri Lanka	67.88
+148	Chad	no data
+152	Chile	100.15
+156	China	105.07
+158	Taiwan, Province of China	no data
+162	Christmas Island	no data
+166	Cocos (Keeling) Islands	no data
+170	Colombia	103.54
+174	Comoros	no data
+175	Mayotte	no data
+178	Congo	no data
+180	Congo, the Democratic Republic of the	no data
+184	Cook Islands	no data
+188	Costa Rica	122.07
+191	Croatia	159.21
+192	Cuba	no data
+196	Cyprus	147.1
+203	Czech Republic	162.64
+204	Benin	no data
+208	Denmark	192.36
+212	Dominica	no data
+214	Dominican Republic	no data
+218	Ecuador	118.84
+222	El Salvador	no data
+226	Equatorial Guinea	no data
+231	Ethiopia	no data
+232	Eritrea	no data
+233	Estonia	174.19
+234	Faroe Islands	no data
+238	Falkland Islands (Malvinas)	no data
+239	South Georgia and the South Sandwich Islands	no data
+242	Fiji	no data
+246	Finland	184.96
+248	Åland Islands	no data
+250	France	156.65
+254	French Guiana	no data
+258	French Polynesia	no data
+260	French Southern Territories	no data
+262	Djibouti	no data
+266	Gabon	no data
+268	Georgia	121.14
+270	Gambia	no data
+275	Palestinian Territory, Occupied	no data
+276	Germany	180.27
+288	Ghana	no data
+292	Gibraltar	no data
+296	Kiribati	no data
+300	Greece	129.24
+304	Greenland	no data
+308	Grenada	no data
+312	Guadeloupe	no data
+316	Guam	no data
+320	Guatemala	no data
+324	Guinea	no data
+328	Guyana	no data
+332	Haiti	no data
+334	Heard Island and McDonald Islands	no data
+336	Holy See (Vatican City State)	no data
+340	Honduras	no data
+344	Hong Kong	98.42
+348	Hungary	137.15
+352	Iceland	182.26
+356	India	110.99
+360	Indonesia	90.36
+364	Iran, Islamic Republic of	no data
+368	Iraq	no data
+372	Ireland	154.52
+376	Israel	146.06
+380	Italy	141.07
+384	Côte d'Ivoire	no data
+388	Jamaica	no data
+392	Japan	169.48
+398	Kazakhstan	93.77
+400	Jordan	113.92
+404	Kenya	92.54
+408	Korea, Democratic People's Republic of	no data
+410	Korea, Republic of	no data
+414	Kuwait	117.34
+417	Kyrgyzstan	no data
+418	Lao People's Democratic Republic	no data
+422	Lebanon	99.35
+426	Lesotho	no data
+428	Latvia	150.81
+430	Liberia	no data
+434	Libya	no data
+438	Liechtenstein	no data
+440	Lithuania	161.84
+442	Luxembourg	173.63
+446	Macao	no data
+450	Madagascar	no data
+454	Malawi	no data
+458	Malaysia	117.98
+462	Maldives	no data
+466	Mali	no data
+470	Malta	109.5
+474	Martinique	no data
+478	Mauritania	no data
+480	Mauritius	no data
+484	Mexico	124.9
+492	Monaco	no data
+496	Mongolia	no data
+498	Moldova, Republic of	no data
+499	Montenegro	no data
+500	Montserrat	no data
+504	Morocco	107.54
+508	Mozambique	no data
+512	Oman	173.68
+516	Namibia	no data
+520	Nauru	no data
+524	Nepal	no data
+528	Netherlands	185.38
+531	Curaçao	no data
+533	Aruba	no data
+534	Sint Maarten (Dutch part)	no data
+535	Bonaire, Sint Eustatius and Saba	no data
+540	New Caledonia	no data
+548	Vanuatu	no data
+554	New Zealand	176.81
+558	Nicaragua	no data
+562	Niger	no data
+566	Nigeria	52.44
+570	Niue	no data
+574	Norfolk Island	no data
+578	Norway	176.39
+580	Northern Mariana Islands	no data
+581	United States Minor Outlying Islands	no data
+583	Micronesia, Federated States of	no data
+584	Marshall Islands	no data
+585	Palau	no data
+586	Pakistan	102.57
+591	Panama	114.32
+598	Papua New Guinea	no data
+600	Paraguay	no data
+604	Peru	80.42
+608	Philippines	83.74
+612	Pitcairn	no data
+616	Poland	140.02
+620	Portugal	162.52
+624	Guinea-Bissau	no data
+626	Timor-Leste	no data
+630	Puerto Rico	133.77
+634	Qatar	154.53
+638	Réunion	no data
+642	Romania	133.38
+643	Russian Federation	no data
+646	Rwanda	no data
+652	Saint Barthélemy	no data
+654	Saint Helena, Ascension and Tristan da Cunha	no data
+659	Saint Kitts and Nevis	no data
+660	Anguilla	no data
+662	Saint Lucia	no data
+663	Saint Martin (French part)	no data
+666	Saint Pierre and Miquelon	no data
+670	Saint Vincent and the Grenadines	no data
+674	San Marino	no data
+678	Sao Tome and Principe	no data
+682	Saudi Arabia	149.54
+686	Senegal	no data
+688	Serbia	117.23
+690	Seychelles	no data
+694	Sierra Leone	no data
+702	Singapore	151.59
+703	Slovakia	151.16
+704	Viet Nam	no data
+705	Slovenia	169.04
+706	Somalia	no data
+710	South Africa	136.02
+716	Zimbabwe	no data
+724	Spain	168.48
+728	South Sudan	no data
+729	Sudan	no data
+732	Western Sahara	no data
+740	Suriname	no data
+744	Svalbard and Jan Mayen	no data
+748	Swaziland	no data
+752	Sweden	175.3
+756	Switzerland	195.27
+760	Syrian Arab Republic	no data
+762	Tajikistan	no data
+764	Thailand	100.97
+768	Togo	no data
+772	Tokelau	no data
+776	Tonga	no data
+780	Trinidad and Tobago	no data
+784	United Arab Emirates	160.38
+788	Tunisia	114.56
+792	Turkey	124.05
+795	Turkmenistan	no data
+796	Turks and Caicos Islands	no data
+798	Tuvalu	no data
+800	Uganda	no data
+804	Ukraine	111.93
+807	Macedonia, the former Yugoslav Republic of	no data
+818	Egypt	89.87
+826	United Kingdom	161.74
+831	Guernsey	no data
+832	Jersey	no data
+833	Isle of Man	no data
+834	Tanzania, United Republic of	no data
+840	United States	170.72
+850	Virgin Islands, U.S.	no data
+854	Burkina Faso	no data
+858	Uruguay	122.26
+860	Uzbekistan	no data
+862	Venezuela, Bolivarian Republic of	no data
+876	Wallis and Futuna	no data
+882	Samoa	no data
+887	Yemen	no data
+894	Zambia	no data
