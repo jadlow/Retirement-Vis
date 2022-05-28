@@ -25,11 +25,25 @@ function enter(country) {
   var country = countryList.find(function(c) {
     return parseInt(c.id, 10) === parseInt(country.id, 10)
   })
-  current.text(country && country.name + " " + country.QOL|| '')
+  current.text(country && country.name || '')
+  drill.text('Quality of Life Index: ' + country.QOL )
+  safety.text('Safety Index: ' + country.SI )
+  health.text('Health Care Index: ' + country.HI )
+  col.text('Cost of Living Index: ' + country.COLI )
+  traffic.text('Traffic Index: ' + country.TI )
+  pollution.text('Pollution Index: ' + country.PI )
+  climate.text('Climate Index: ' + country.CI )
 }
 
 function leave(country) {
   current.text('')
+  drill.text('')
+  safety.text('')
+  health.text('')
+  col.text('')
+  traffic.text('')
+  pollution.text('')
+  climate.text('')
 }
 
 //
@@ -37,6 +51,16 @@ function leave(country) {
 //
 
 var current = d3.select('#current')
+var drill = d3.select('#drill')
+var safety = d3.select('#safety')
+var health = d3.select('#health')
+var col = d3.select('#col')
+var traffic = d3.select('#traffic')
+var pollution = d3.select('#pollution')
+var climate = d3.select('#climate')
+var svg = d3.select("#legend").append("svg").attr("width", 200).attr("height", 200)
+var legendText = d3.select('#legendText')
+var legendTitle = d3.select('#legendTitle')
 var canvas = d3.select('#globe')
 var context = canvas.node().getContext('2d')
 var water = {type: 'Sphere'}
@@ -56,6 +80,7 @@ var currentCountry
 var color
 var maxQOL
 var minQOL
+var numColors = 8
 
 //
 // Functions
@@ -157,7 +182,7 @@ function rotate(elapsed) {
 function loadData(cb) {
   d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function(error, json) {
     if (error) throw error
-    d3.tsv('./QoLv2.tsv', function(error, data) {
+    d3.tsv('./QoLv3.tsv', function(error, data) {
       if (error) throw error
       console.log(data)
       console.log(data[0])
@@ -230,6 +255,22 @@ function getCountry(event) {
 // Initialization
 //
 
+function addLegend(){
+  deltaQOL = maxQOL / (numColors)
+  console.log("max QOL: " + maxQOL)
+  for (var i = 0; i < numColors + 1; i++){
+    svg.append('rect')
+      .attr('x', (20 * i))
+      .attr('width', 20)
+      .attr('height', 20)
+      .attr('stroke', 'black')
+      .attr('fill', getColor(deltaQOL * i));
+  }
+  legendText.text('0 ------------ 100 ----------- 200')
+  legendTitle.text('Quality of Life Index')
+}
+
+
 setAngles()
 
 canvas
@@ -244,12 +285,7 @@ loadData(function(world, cList) {
   land = topojson.feature(world, world.objects.land)
   countries = topojson.feature(world, world.objects.countries)
   countryList = cList
-    console.log(land)
-    console.log(countries)
-    // for (var i = 0; i < countries.features.length; i++){
-    //   console.log(countries.features[i])
-    // }
-  
+  addLegend()
   window.addEventListener('resize', scale)
   scale()
   autorotate = d3.timer(rotate)
