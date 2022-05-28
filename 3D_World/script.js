@@ -60,9 +60,7 @@ var col = d3.select('#col')
 var traffic = d3.select('#traffic')
 var pollution = d3.select('#pollution')
 var climate = d3.select('#climate')
-var svg = d3.select("#legend").append("svg").attr("width", 200).attr("height", 200)
-var legendText = d3.select('#legendText')
-var legendTitle = d3.select('#legendTitle')
+var svg = d3.select("#legend").append("svg").attr("width", 400).attr("height", 200)
 var canvas = d3.select('#globe')
 var context = canvas.node().getContext('2d')
 var water = {type: 'Sphere'}
@@ -186,8 +184,6 @@ function loadData(cb) {
     if (error) throw error
     d3.tsv('./QoLv3.tsv', function(error, data) {
       if (error) throw error
-      console.log(data)
-      console.log(data[0])
         maxQOL = d3.max(data, function(d) { return parseInt(d.QOL); }) + 1
         minQOL = d3.min(data, function(d) { return parseInt(d.QOL); }) + 1
         for (var i = 0; i < data.length; i++) {
@@ -259,17 +255,21 @@ function getCountry(event) {
 
 function addLegend(){
   deltaQOL = maxQOL / (numColors)
-  console.log("max QOL: " + maxQOL)
-  for (var i = 0; i < numColors + 1; i++){
-    svg.append('rect')
-      .attr('x', (20 * i))
-      .attr('width', 20)
-      .attr('height', 20)
-      .attr('stroke', 'black')
-      .attr('fill', getColor(deltaQOL * i));
-  }
-  legendText.text('0 ------------ 100 ----------- 200')
-  legendTitle.text('Quality of Life Index')
+  data = [0, 24.5, 49, 73.5, 98, 122.5, 147, 171.5, 196]
+  svg.selectAll('rect')
+                .data(data)
+                .enter().append('rect')
+                  .attr('transform', function (d, i) {return 'translate('+ 40 * i +',0)';})
+                  .attr('width', 40)
+                  .attr('height', 40)
+                  .attr('stroke', 'black')
+                  .attr('fill', function (d) {return getColor(d);});
+
+  svg.selectAll('text')
+                .data(data)
+                .enter().append('text')
+                .attr('transform', function (d, i) {return 'translate('+ 40 * i +', 60)';})
+                .text(function (d) {return parseInt(d);})
 }
 
 
