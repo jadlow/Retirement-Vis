@@ -1,3 +1,5 @@
+// Built from a visualization by Joren Vogel
+// https://jorin.me/d3-canvas-globe-hover/
 //
 // Configuration
 //
