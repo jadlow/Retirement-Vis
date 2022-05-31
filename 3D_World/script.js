@@ -28,6 +28,7 @@ var colorCountry = '#a00'
 // Variables
 //
 
+// bind d3 objects to HTML elements
 var current = d3.select('#current')
 var drill = d3.select('#drill')
 var safety = d3.select('#safety')
@@ -40,6 +41,7 @@ var svg = d3.select("#legend").append("svg").attr("width", 400).attr("height", 2
 var canvas = d3.select('#globe')
 var context = canvas.node().getContext('2d')
 var water = {type: 'Sphere'}
+// map the 2D lat/long coordiantes to 3D points on a sphere
 var projection = d3.geoOrthographic().precision(0.1)
 var graticule = d3.geoGraticule10()
 var path = d3.geoPath(projection).context(context)
@@ -59,7 +61,7 @@ var minQOL
 var numColors = 8
 
 //
-// Color Calculation and fill
+// Color Calculation and fill for country geometries
 //
 
 function getColor(val) {
@@ -90,7 +92,7 @@ function loadData(cb) {
     if (error) throw error
     d3.tsv('./QoLv3.tsv', function(error, data) {
       if (error) throw error
-      console.log(json)
+        // calculate min and max quality of life values for color scale
         maxQOL = d3.max(data, function(d) { return parseInt(d.QOL); }) + 1
         minQOL = d3.min(data, function(d) { return parseInt(d.QOL); }) + 1
         for (var i = 0; i < data.length; i++) {
@@ -114,6 +116,7 @@ function loadData(cb) {
 // Hover Handler and Drill Down Display
 //
 
+// display country specific drill down information when the mouse enters the country's geometry
 function enter(country) {
   var country = countryList.find(function(c) {
     return parseInt(c.id, 10) === parseInt(country.id, 10)
@@ -128,6 +131,7 @@ function enter(country) {
   climate.text('Climate Index: ' + country.CI )
 }
 
+// remove the drill down information whene the mouse leaves the country's geometry
 function leave(country) {
   current.text('')
   drill.text('')
@@ -151,13 +155,16 @@ function setAngles() {
   projection.rotate(rotation)
 }
 
+// function to begin rotation after specified delay
 function startRotation(delay) {
   autorotate.restart(rotate, delay || 0)
 }
 
+// function  to stop rotation immediately
 function stopRotation() {
   autorotate.stop()
 }
+
 
 function rotate(elapsed) {
   now = d3.now()
@@ -175,6 +182,7 @@ function rotate(elapsed) {
 // Render function for drag/scale/rotate/hover
 //
 
+// update country coloring (including current hovered country)
 function render() {
   context.clearRect(0, 0, width, height)
   fill(water, colorWater)
@@ -262,31 +270,6 @@ function getCountry(event) {
   })
 }
 
-function enter(country) {
-  var country = countryList.find(function(c) {
-    return parseInt(c.id, 10) === parseInt(country.id, 10)
-  })
-  current.text(country && country.name || '')
-  drill.text('Quality of Life Index: ' + country.QOL )
-  safety.text('Safety Index: ' + country.SI )
-  health.text('Health Care Index: ' + country.HI )
-  col.text('Cost of Living Index: ' + country.COLI )
-  traffic.text('Traffic Index: ' + country.TI )
-  pollution.text('Pollution Index: ' + country.PI )
-  climate.text('Climate Index: ' + country.CI )
-}
-
-function leave(country) {
-  current.text('')
-  drill.text('')
-  safety.text('')
-  health.text('')
-  col.text('')
-  traffic.text('')
-  pollution.text('')
-  climate.text('')
-}
-
 //
 // Cursor Postition Algorithm from d3-polygon
 // https://github.com/d3/d3-polygon
@@ -308,7 +291,7 @@ function polygonContains(polygon, point) {
 }
 
 //
-// Draw Legend
+// Draw Quality of Life Legend
 //
 
 function addLegend(){
