@@ -10,7 +10,7 @@ http://www.d3noob.org/2013/01/adding-tooltips-to-d3js-graph.html
 Mike Bostock, Pie Chart Legend
 http://bl.ocks.org/mbostock/3888852  */
 
-		
+
 //Width and height of map
 var width = 960;
 var height = 500;
@@ -19,6 +19,10 @@ var canvas = d3.select("#states");
 var g_max = 0;
 var g_min = 0;
 var g_min_city = 0;
+
+var legend_array = [];
+
+
 
 // D3 Projection
 var projection = d3.geo.albersUsa()
@@ -38,6 +42,8 @@ function normalize(value) {
 	return (value - g_min) / (g_max - g_min);
 };
 
+
+
 function get_color(value) {
 	// base case if you hit a value withno data it will be 0 and greyed out
 	if (value == 0) {
@@ -46,7 +52,6 @@ function get_color(value) {
 	// console.log(normalize(value));
 	green = Math.round(255 * normalize(value) + 80);
 
-	console.log(normalize(value));
 	return ( "rgb(40," + green + ",40)");
 };
 
@@ -56,7 +61,7 @@ function normalize_qli_cities(index) {
 	return(squared);
 };
 
-var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
+var legendText = ["0-54","55-109", "110-164", "165 - 255"];
 
 //Create SVG element and append map to the SVG
 var svg = d3.select("body")
@@ -177,29 +182,84 @@ svg.selectAll("circle")
            .style("opacity", 0);   
     });
 });  
-        
-// Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
-var legend = d3.select("body").append("svg")
-      			.attr("class", "legend")
-     			.attr("width", 140)
-    			.attr("height", 200)
-   				.selectAll("g")
-   				.data(color.domain().slice().reverse())
-   				.enter()
-   				.append("g")
-     			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
 
-  	legend.append("rect")
-   		  .attr("width", 18)
-   		  .attr("height", 18)
-   		  .style("fill", color);
+var legend_list = [];
+function legend_color() {
+	var delta = (g_max - g_min) / 4;
+	console.log(delta);
+	for ( var i = 0; i < 4; i ++) {
+		legend_list.push(g_min + i*delta);
+	}
 
-  	legend.append("text")
-  		  .data(legendText)
-      	  .attr("x", 24)
-      	  .attr("y", 9)
-      	  .attr("dy", ".35em")
-      	  .text(function(d) { return d; });
-	});
+};
+legend_color();
+		
+// Define linear scale for output
+var color_legend = d3.scale.linear()
+			  .range(legend_list);
+
+function legend_color(color) {
+	
+
+};
+
+
+// console.log(color_legend.domain().slice().reverse());
+
+// var legend_svg = d3.select("#legend").append("svg").attr("width", 400).attr("height", 200)
+
+// function addLegend(){
+// 	var maxQOL=g_max
+// 	var minQOL=g_min
+// 	deltaQOL = maxQOL / (numColors)
+// 	console.log(minQOL)
+// 	data = [40, 60, 80, 100, 120, 140, 160, 180, 200]
+// 	data2 = ['Quality of Life Index']
+// 	legend_svg.selectAll('rect')
+// 				  .data(data)
+// 				  .enter().append('rect')
+// 					.attr('transform', function (d, i) {return 'translate('+ 40 * i +', 0)';})
+// 					.attr('width', 40)
+// 					.attr('height', 40)
+// 					.attr('stroke', 'black')
+// 					.attr('fill', function (d) {return get_Color(d);});
+  
+// 				legend_svg.selectAll('text')
+// 				  .data(data)
+// 				  .enter().append('text')
+// 				  .attr('transform', function (d, i) {return 'translate('+ 40 * i +', 60)';})
+// 				  .attr('fill', 'white')
+// 				  .text(function (d) {return parseInt(d);});
+// 				  legend_svg.selectAll('h1')
+// 				  .data(data2)
+// 				  .enter().append('text')
+// 				  .attr('transform', function (d) {return 'translate(100, 90)';})
+// 				  .attr('fill', 'white')
+// 				  .attr('font-size', '18')
+// 				  .text(function (d) {return d;});
+//   }
+// // // Modified Legend Code from Mike Bostock: http://bl.ocks.org/mbostock/3888852
+// // var legend = d3.select("body").append("svg")
+// //       			.attr("class", "legend")
+// //      			.attr("width", 140)
+// //     			.attr("height", 200)
+// //    				.selectAll("g")
+// //    				.data(legend_list)
+// //    				.enter()
+// //    				.append("g")
+// //      			.attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+// //   	legend.append("rect")
+// //    		  .attr("width", 18)
+// //    		  .attr("height", 18)
+// //    		  .style("fill",function (d) {return getColor(d);});
+
+// //   	legend.append("text")
+// //   		  .data(legendText)
+// //       	  .attr("x", 24)
+// //       	  .attr("y", 9)
+// //       	  .attr("dy", ".35em")
+// //       	  .text(function(d) { return d; });
+ 	});
 
 });
