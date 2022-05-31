@@ -1,51 +1,51 @@
 state,visited
-Delaware,185.58
-Connecticut,182.5
-Georgia,182.5
+Delaware,0
+Connecticut,0
+Georgia,174.684
 Hawaii,176.19
-Illinois,176.19
-Arkansas,167.78
-California,166.24
-Kentucky,166.24
+Illinois,169.884
+Arkansas,0
+California,189
+Kentucky,0
 Minnesota,166.24
-Montana,165.87
-Nebraska,165.87
-Colorado,161.87
-Indiana,161.1
-Idaho,139.64
-Iowa,139.64
-Kansas,139.64
-Louisiana,139.64
-Maine,139.64
-Massachusetts,139.64
-Michigan,139.64
-Mississippi,139.64
-New Jersey,139.64
-New Mexico,139.64
-New York,137.84
-Missouri,131.86
-Nevada,131.86
-New Hampshire,131.86
-North Carolina,131.86
-North Dakota,131.86
-Ohio,131.86
-Oklahoma,131.86
-Oregon,131.86
-Pennsylvania,131.86
-Rhode Island,131.86
-South Carolina,131.86
-South Dakota,131.86
-Tennessee,131.86
-Texas,131.86
-Utah,131.86
-Vermont,131.86
-Virginia,131.86
+Montana,0
+Nebraska,0
+Colorado,186.156
+Indiana,183.25
+Idaho,0
+Iowa,0
+Kansas,189.994
+Louisiana,0
+Maine,0
+Massachusetts,187.294
+Michigan,188.668
+Mississippi,0
+New Jersey,160.084
+New Mexico,0
+New York,182.362
+Missouri,181.706
+Nevada,171.856
+New Hampshire, 0
+North Carolina,213.359
+North Dakota,0
+Ohio,195.14
+Oklahoma,204.572
+Oregon,188.286
+Pennsylvania,168.878
+Rhode Island,0
+South Carolina,0
+South Dakota,0
+Tennessee,178.206
+Texas,199.65
+Utah,173.446
+Vermont,0
+Virginia,174.396
 Alabama,0
-Alaska,0
-Arizona,0
-Florida,0
-Maryland,0
-Washington,0
+Alaska,178.188
+Arizona,174.198
+Florida,190
+Maryland,174.376
+Washington,198.725
 West Virginia,0
-Wisconsin,0
+Wisconsin,194
 Wyoming,0

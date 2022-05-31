@@ -18,6 +18,7 @@ var canvas = d3.select("#states");
 
 var g_max = 0;
 var g_min = 0;
+var g_min_city = 0;
 
 // D3 Projection
 var projection = d3.geo.albersUsa()
@@ -49,6 +50,11 @@ function get_color(value) {
 	return ( "rgb(40," + green + ",40)");
 };
 
+function normalize_qli_cities(index) {
+	var val = index - g_min_city + 1;
+	var squared = Math.pow(val, 1/2);
+	return(squared);
+};
 
 var legendText = ["Cities Lived", "States Lived", "States Visited", "Nada"];
 
@@ -131,6 +137,12 @@ svg.selectAll("path")
 // Map the cities I have lived in!
 d3.csv("cities-lived.csv", function(data) {
 
+	g_min_city = d3.min(data, function(d) {
+		if (d.years != 0) {
+			return parseInt(d.years);
+		}
+	});
+
 svg.selectAll("circle")
 	.data(data)
 	.enter()
@@ -142,7 +154,7 @@ svg.selectAll("circle")
 		return projection([d.lon, d.lat])[1];
 	})
 	.attr("r", function(d) {
-		return Math.sqrt(d.years) * 4;
+		return normalize_qli_cities(d.years);
 	})
 		.style("fill", "rgb(217,91,67)")	
 		.style("opacity", 0.85)	
