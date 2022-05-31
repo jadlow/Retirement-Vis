@@ -5,4 +5,4 @@ no additional software download is necessary. In order to run the visualization 
  
 CODE DOCUMENTATION
 
-This program can be modified to visualize other data sets with country level granularity. Detailed user documentation is embedded in the code as comments.
+This program can be modified to visualize other data sets with country level granularity. Detailed user documentation is embedded in the code (script.js) as comments.
