@@ -90,6 +90,7 @@ function loadData(cb) {
     if (error) throw error
     d3.tsv('./QoLv3.tsv', function(error, data) {
       if (error) throw error
+      console.log(json)
         maxQOL = d3.max(data, function(d) { return parseInt(d.QOL); }) + 1
         minQOL = d3.min(data, function(d) { return parseInt(d.QOL); }) + 1
         for (var i = 0; i < data.length; i++) {
