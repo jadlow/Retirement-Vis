@@ -90,7 +90,7 @@ context.stroke()
 function loadData(cb) {
   d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function(error, json) {
     if (error) throw error
-    d3.tsv('./QoLv3.tsv', function(error, data) {
+    d3.tsv('./QOLv3.tsv', function(error, data) {
       if (error) throw error
         // calculate min and max quality of life values for color scale
         maxQOL = d3.max(data, function(d) { return parseInt(d.QOL); }) + 1
