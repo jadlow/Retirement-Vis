@@ -66,7 +66,7 @@ var numColors = 8
 
 function getColor(val) {
   normVal = (val - minQOL) / (maxQOL - minQOL)
-  return "rgb(40," +  Math.round(normVal*255 + 80) +", 40)";
+  return "rgb(0," +  Math.round(normVal*255) +", 0)";
 }
 
 function fill(obj, color) {
@@ -90,11 +90,11 @@ context.stroke()
 function loadData(cb) {
   d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function(error, json) {
     if (error) throw error
-    d3.tsv('./QoLv3.tsv', function(error, data) {
+    d3.tsv('./QOLv3.tsv', function(error, data) {
       if (error) throw error
         // calculate min and max quality of life values for color scale
         maxQOL = d3.max(data, function(d) { return parseInt(d.QOL); }) + 1
-        minQOL = d3.min(data, function(d) { return parseInt(d.QOL); }) + 1
+        minQOL = d3.min(data, function(d) { if (d.QOL > 0 ) { return parseInt(d.QOL);}  }) + 1
         for (var i = 0; i < data.length; i++) {
             var dataNum = data[i].id;
             var dataName = data[i].name;
@@ -296,7 +296,8 @@ function polygonContains(polygon, point) {
 
 function addLegend(){
   deltaQOL = maxQOL / (numColors)
-  data = [0, 24.5, 49, 73.5, 98, 122.5, 147, 171.5, 196]
+  console.log(minQOL)
+  data = [40, 60, 80, 100, 120, 140, 160, 180, 200]
   data2 = ['Quality of Life Index']
   svg.selectAll('rect')
                 .data(data)
