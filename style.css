@@ -1,0 +1,86 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #555;
+}
+
+#globe {
+  cursor: move;  
+}
+
+#current {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 4%;
+}
+#tool {
+  background: black
+}
+
+#drill {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 8%;
+  font-size: 8;
+}
+
+#safety {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 10%;
+  font-size: 8;
+}
+#health {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 12%;
+  font-size: 8;
+}
+#col {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 14%;
+  font-size: 8;
+}
+#traffic {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 16%;
+  font-size: 8;
+}
+#pollution {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 18%;
+  font-size: 8;
+}
+#climate {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 4%;
+  margin-top: 20%;
+  font-size: 8;
+}
+#legend {
+  position: absolute;
+  color: white;
+  font-family: sans-serif;
+  margin-left: 75%;
+  margin-top: 4%;
+  font-size: 3;
+}
