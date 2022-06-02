@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<title>Retirement Analytics</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./3D_World/style.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-red w3-card w3-left-align w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="JL_P2_Tech_Report.pdf" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Global Technical Paper</a>
+    <a href="./3D_World/index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Global Vizualization</a>
+    <a href="paper_kholsapp.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">State Wide Technical Paper</a>
+    <a href="./2D_US/2D_index.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">State Wide Visualization
+    </a>
+    <a href="https://github.com/jadlow/Retirement-Vis" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">GitHub
+      </a>
+      <a href="state_2D.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"> Data Set US States </a>
+      <a href="./2D_US/Usage_doc.html" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white"> Usage & code doc </a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="JL_P2_Tech_Report.pdf" class="w3-bar-item w3-button w3-padding-large"> Global technical Paper</a>
+    <a href="./3D_World/index.html" class="w3-bar-item w3-button w3-padding-large"> Global Visualization </a>
+    <a href="paper_kholsapp.html" class="w3-bar-item w3-button w3-padding-large"> State Wide Technical Paper </a>
+    <a href="./2D_US/2D_index.html" class="w3-bar-item w3-button w3-padding-large"> State Wide Visualization </a>
+    <a href="https://github.com/jadlow/Retirement-Vis"  class="w3-bar-item w3-button w3-padding-large">GitHub</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-red w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo"> Retirement Analytics </h1>
+  <p class="w3-xlarge">Produced by Kimi Holsapple (kholsapp) and Jacob Low (jadlow)</p>
+
+  <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-white w3-container">
+  <div class="w3-content">
+    <div>
+      <h1>Global Analysis </h1>
+      <h2> Jacob Low </h2>
+      <h5 class="w3-padding-32">When selecting a retirement location there are many factors that must be taken into consideration. This project
+        will identify the most desirable country for retirement through data analysis and web-based visualizations and explore what attributes makes this country the best.</h5>
+
+      <p class="w3-text-grey">The Global Technical Paper describes how to create the interactive 3D globe below, and use it to visualize the 8 most important retirement
+        factors: purchasing power, safety, health care, cost of living,
+        property price to income ratio, traffic commute time, pollution, and climate. The globe is divided at the country level, where
+        the color of each country corresponds to it’s quality of life
+        index. This granularity is effective due to the unique styles
+        of politics, culture, and economy of each country.</p>
+
+        <p class="w3-text-grey">User and code documentation for 3D globe visualization located in GitHub repository README.md.</p>
+    </div>
+
+    <div class="w3-padding-32 w3-half">
+      <h3>Where is the best country to retire? </h3>
+      <h4> An exploration of the top 10 countries with best retirement conditions. </h4>
+      <h5 class="w3-padding-16">Accoording to the Global Quality of Life Visualization for Retirement,  Switzerland, Denmark, Netherlands, Finland, Australia, Iceland, Germany, Austria, New Zealand, and Norway are the 10 countries with the highest quality of life
+        indices respectively. But what differentiates these desirable countries?
+      </h5>
+      <h5 class="w3-padding-16">The stacked bar charts are separated by their contribution to the quality of life score. The attributes that increase
+        the quality of life score are visualized in the blue chart, and
+        the attributes that decrease the quality of life score are
+        visualized in the red chart.</h5>
+        <h5 class="w3-padding-16">According to the visualization, Switzerland is the best
+          country to retire in. Out of the top 10 countries, Switzerland
+          has most of the highest positive retirement factor indices.
+          Although Switzerland has the highest quality of life score, it also has a cost of living index far greater
+          than any of the other top 10 countries. From this analysis
+          of the 3D globe visualization along with the stacked bar
+          charts, we can conclude that Switzerland is an excellent
+          retirement destination suitable to retirees that can afford the
+          exceedingly high cost of living. Similar analysis can be done
+          on the remaining countries.
+        </h5>
+    </div>
+
+    <div class="w3-padding-32 w3-half">
+      <img src="blueQOL.png" width="500">
+      <img src="redQOL.png" width="500">
+    </div>
+
+  </div>
+</div>
+
+<div class="w3-row-padding w3-dark-grey w3-padding-64 w3-container">
+  <h1 class="w3-center">Global Quality of Life Visualization for Retirement</h1>
+  <div>
+    <h2 id="current"></h2>
+    <p id="drill"></p>
+    <p id="safety"></p>
+    <p id="health"></p>
+    <p id="col"></p>
+    <p id="traffic"></p>
+    <p id="pollution"></p>
+    <p id="climate"></p>
+    <div id="legend"></div>
+    <canvas id="globe"></canvas>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+
+    <div class=" w3-margin-right">
+      <h1> State Wide Analysis </h1>
+      <h2> Kimi Holsapple </h2>
+      <h5 class="w3-padding-32">
+        For those living in the United States, picking a location in the same country might be a practical solution. 
+        As retirement rates have increased during COVID, understanding prime factors in optimal location and state are 
+        more important than ever for those contemplenting retirment. Our findings have shown Raleigh, North Carolina to 
+        be the best city for retirees.
+      </h5>
+
+      <p class="w3-text-grey">
+        In this segment we attempt a visualization on a Numbeo data set to determine best retirement locations by a quality of life index. 
+        Important factors considered that were captured in this index were economics indicators like purchasing power, health factors, pollution, and entertainment factors. 
+        A D3 choropleth visualization was created to display quality of life for states and their contributing cities. 
+        It was found North Carolina held the best places to live with Raleigh being it's best city.
+      </p>
+
+      
+    </div>
+
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <p>
+      Copyright (c) 2022 kholsapp@ucsc.edu jadlow@ucsc.edu
+    </p><p>
+      Permission is hereby granted, free of charge, to any person obtaining a copy
+      of this software and associated documentation files (the "Software"), to deal
+      in the Software without restriction, including without limitation the rights
+      to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+      copies of the Software, and to permit persons to whom the Software is
+      furnished to do so, subject to the following conditions:
+
+      The above copyright notice and this permission notice shall be included in all
+      copies or substantial portions of the Software.
+    </p><p>
+      THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+      IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+      FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+      AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+      LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+      OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+      SOFTWARE.
+
+    </p>
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+  <div class="w3-xlarge w3-padding-32">
+ </div>
+ <p>Powered and template from <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.2/d3.min.js'></script>
+<script src='https://d3js.org/d3-geo.v1.min.js'></script>
+<script src='https://d3js.org/topojson.v2.min.js'></script>
+<script src='https://bl.ocks.org/mbostock/raw/7ea1dde508cec6d2d95306f92642bc42/6aac691494f752142a67cc43c51a0fd09896dbd4/versor.js'></script>
+<script  src="./3D_World/script.js"></script>
+
+</body>
+</html>
